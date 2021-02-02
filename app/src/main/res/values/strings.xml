@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">SimpleCountdownTimer</string>
+    <string name="app_name">SimpleCountdownTimerXT</string>
 
     //MainActivity
     <string name="show_timer">Zeige Timer</string>
