@@ -66,12 +66,14 @@ class ShowTimerActivity : AppCompatActivity() {
 
         if(sLeft >= 0){
             diff = sLeft
+            val d = diff / (24 * 60 * 60)
+            diff = diff - (d * (24 * 60 * 60))
             val h = diff / (60*60)
             diff = diff - h * (60*60)
             val m = diff / 60
             diff = diff - m * 60
             val s = diff
-            zeit = "noch\n"
+            zeit = "noch $d Tage und \n"
             zeit = if (h < 10) zeit + "0" + h + ":" else "$zeit$h:"
             zeit = if (m < 10) zeit + "0" + m + ":" else "$zeit$m:"
             zeit = if (s < 10) zeit + "0" + s + ""  else "$zeit$s"
