@@ -6,52 +6,27 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/text_zeitAnzeige"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="45dp"
-        android:text="@string/dauer"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edit_inputTermin" />
+    <ListView
+        android:id="@+id/list_termine"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="15dp"
+        app:layout_constraintBottom_toTopOf="@+id/button_setTimer"
+        app:layout_constraintTop_toBottomOf="@+id/button_showTimer"
+        app:layout_constraintVertical_bias="0.5" />
 
     <Button
         android:id="@+id/button_setTimer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="45dp"
+        android:layout_marginBottom="25dp"
         android:text="@string/set_timer"
         android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_zeitAnzeige" />
-
-    <EditText
-        android:id="@+id/edit_inputTermin"
-        android:layout_width="240dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="25dp"
-        android:layout_marginTop="45dp"
-        android:gravity="center"
-        android:hint="@string/hint_termin"
-        android:inputType="text"
-        app:layout_constraintStart_toEndOf="@+id/text_termin"
-        app:layout_constraintTop_toBottomOf="@+id/button_showTimer" />
-
-    <TextView
-        android:id="@+id/text_termin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="5dp"
-        android:layout_marginTop="45dp"
-        android:text="@string/termin"
-        android:textSize="24sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button_showTimer" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/button_showTimer"

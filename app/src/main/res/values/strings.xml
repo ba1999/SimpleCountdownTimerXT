@@ -8,6 +8,7 @@
     <string name="hint_dauer">IHRE DAUER</string>
     <string name="termin">Termin</string>
     <string name="dauer">Dauer</string>
+    <string name="showTimerButton"></string>
 
     <string name="time_over">Termin ist schon vorbei</string>
 </resources>
