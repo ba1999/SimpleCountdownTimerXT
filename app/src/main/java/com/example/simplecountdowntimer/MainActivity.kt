@@ -98,13 +98,9 @@ class MainActivity : AppCompatActivity() {
             list.add("$termin\n$listeneintrag")
             adapter.notifyDataSetChanged()
 
-            /*txtZeitAnzeige.setText("$day.${month+1}.$year $hour:$minute Uhr")
 
-            var zeit = if (hour < 10) "0$hour" else hour
-            zeit = "" + zeit + ":" + if(minute < 10) "0$minute" else minute
-            txtZeitAnzeige.text = zeit
 
-            longToast("" + hour + ":" + minute)*/
+
         }
     }
 }
