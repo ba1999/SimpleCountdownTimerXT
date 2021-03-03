@@ -120,10 +120,44 @@ class MainActivity : AppCompatActivity() {
             adapter.notifyDataSetChanged()
 
 
-
+            //Speicher den neuen Termin in den Shared Preferences
+            val sp = getPreferences(Context.MODE_PRIVATE)
+            val edit = sp.edit()
+            edit.putInt("AnzahlTermine", list.size)
+            val i = list.size - 1
+            edit.putString("Termin_$i", list.get(i))
+            edit.apply()
 
         }
     }
 
+    override fun onPause() {
+        super.onPause()
+        Log.i(TAG, "onPause")
+
+        // speicher die Terminliste
+        val sp = getPreferences(Context.MODE_PRIVATE)
+        val edit = sp.edit()
+        edit.putInt("AnzahlTermine", list.size)
+        for(i in 0 until list.size){
+            edit.putString("Termin_$i", list.get(i))
+        }
+        edit.commit()
+    }
+
+    override fun onResume() {
+        super.onResume()
+        Log.i(TAG, "onResume")
+
+        // Termine wieder einlesen
+        val sp = getPreferences(Context.MODE_PRIVATE)
+        val anzahl = sp.getInt("AnzahlTermine", 0)
+        for(i in 0 until anzahl){
+            val t = sp.getString("Termin_$i", "").toString()
+            if(!list.contains(t)){
+                list.add(t)
+            }
+        }
+    }
 
 }
