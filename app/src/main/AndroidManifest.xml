@@ -9,7 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.SimpleCountdownTimer">
-        <activity android:name=".SetTimerActivity"></activity>
+        <activity android:name=".SetTimerActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"
+            ></activity>
         <activity
             android:name=".ShowTimerActivity"
             android:parentActivityName=".MainActivity" />
