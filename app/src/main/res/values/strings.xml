@@ -8,11 +8,12 @@
     <string name="hint_dauer">IHRE DAUER</string>
     <string name="termin">Termin</string>
     <string name="dauer">Dauer</string>
-    <string name="showTimerButton"></string>
+    <string name="showTimerButton">Zeige Timer</string>
     <string name="choose_date">AUSWÄHLEN</string>
     <string name="delete_date">LÖSCHEN</string>
     <string name="alert_title">Was möchtest du mit dem Termin machen?</string>
     <string name="hint">Sie haben keinen Termin ausgewählt.</string>
+    <string name="select_one">Bitte wählen Sie einen Termin!</string>
 
     <string name="time_over">Termin ist schon vorbei</string>
 </resources>

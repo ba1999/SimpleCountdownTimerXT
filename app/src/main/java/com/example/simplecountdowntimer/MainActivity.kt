@@ -1,6 +1,7 @@
 package com.example.simplecountdowntimer
 
 import android.app.Activity
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -47,7 +48,7 @@ class MainActivity : AppCompatActivity() {
             if(termineintrag == getString(R.string.showTimerButton)){
                 alertDialog(
                         title = getString(R.string.hint),
-                        message = getString(R.string.showTimerButton)){
+                        message = getString(R.string.select_one)){
                     okButton()
                 }.show()
                 return@setOnClickListener
@@ -123,4 +124,6 @@ class MainActivity : AppCompatActivity() {
 
         }
     }
+
+
 }
