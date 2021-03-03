@@ -9,6 +9,10 @@
     <string name="termin">Termin</string>
     <string name="dauer">Dauer</string>
     <string name="showTimerButton"></string>
+    <string name="choose_date">AUSWÄHLEN</string>
+    <string name="delete_date">LÖSCHEN</string>
+    <string name="alert_title">Was möchtest du mit dem Termin machen?</string>
+    <string name="hint">Sie haben keinen Termin ausgewählt.</string>
 
     <string name="time_over">Termin ist schon vorbei</string>
 </resources>

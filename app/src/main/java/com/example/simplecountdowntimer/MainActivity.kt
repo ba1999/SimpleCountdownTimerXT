@@ -6,6 +6,10 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.*
+import splitties.alertdialog.alertDialog
+import splitties.alertdialog.negativeButton
+import splitties.alertdialog.okButton
+import splitties.alertdialog.positiveButton
 import splitties.toast.longToast
 import java.text.SimpleDateFormat
 import java.util.*
@@ -41,6 +45,11 @@ class MainActivity : AppCompatActivity() {
             val termineintrag = btnShowTimer.text.toString()
 
             if(termineintrag == getString(R.string.showTimerButton)){
+                alertDialog(
+                        title = getString(R.string.hint),
+                        message = getString(R.string.showTimerButton)){
+                    okButton()
+                }.show()
                 return@setOnClickListener
             }
 
@@ -64,7 +73,18 @@ class MainActivity : AppCompatActivity() {
         }
 
         lvTermine.setOnItemClickListener { adapterView, view, i, l ->
-            btnShowTimer.text = lvTermine.getItemAtPosition(i).toString()
+
+            alertDialog(
+                    title = getString(R.string.alert_title),
+                    message = lvTermine.getItemAtPosition(i).toString()) {
+                positiveButton(R.string.choose_date) {
+                    btnShowTimer.text = lvTermine.getItemAtPosition(i).toString()
+                }
+                negativeButton(R.string.delete_date){
+                    list.removeAt(i)
+                    adapter.notifyDataSetChanged()
+                }
+            }.show()
         }
 
     }
@@ -98,13 +118,9 @@ class MainActivity : AppCompatActivity() {
             list.add("$termin\n$listeneintrag")
             adapter.notifyDataSetChanged()
 
-            /*txtZeitAnzeige.setText("$day.${month+1}.$year $hour:$minute Uhr")
 
-            var zeit = if (hour < 10) "0$hour" else hour
-            zeit = "" + zeit + ":" + if(minute < 10) "0$minute" else minute
-            txtZeitAnzeige.text = zeit
 
-            longToast("" + hour + ":" + minute)*/
+
         }
     }
 }
